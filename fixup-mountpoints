@@ -36,6 +36,15 @@ case "$DEVICE" in
             -e 's block/platform/msm_sdcc.1/by-name/modem mmcblk0p01 ' \
             "$@"
         ;;
+    "kanas")
+        sed -i \
+            -e 's block/platform/sprd-sdhci.3/by-name/system mmcblk0p20 ' \
+            -e 's block/platform/sprd-sdhci.3/by-name/userdata mmcblk0p22 ' \
+            -e 's block/platform/sprd-sdhci.3/by-name/CSC mmcblk0p19 ' \
+            -e 's block/platform/sprd-sdhci.3/by-name/efs mmcblk0p14 ' \
+            -e 's block/platform/sprd-sdhci.3/by-name/prodnv mmcblk0p15 ' \
+            "$@"
+        ;;
 
     "ghost")
         sed -i \
